@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="includes/Style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href= "includes/jqtree.css" rel="stylesheet" />
+    <script src="includes/jquery.cookie.js"></script>
+    <script src="includes/tree.jquery.js"></script>
+    <script src="scripts/monaco-editor/min/vs/loader.js"></script>
+    <script>
+        var jsondocumentid_doc = [
+                                                   {
+                                                       "id": "1234",
+                                                       "playerId": "a067ff",
+                                                       "hashedId": "bb0091",
+                                                       "countryCode": "hk",
+                                                       "nickname": "DannyBoy",
+                                                       "nicknameLower": "dannyboy",
+                                                       "score": 0,
+                                                       "secondaryScore": 18,
+                                                       "indexScore": 0.18,
+                                                       "level": 1,
+                                                       "lastSaveUnixTime": 1446591499,
+                                                       "lastLoadUnixTime": 1446590552,
+                                                       "disconnectedUnixTime": 1446591499,
+                                                       "facebookId": "FB_1010006092353214",
+                                                       "gameCenterId": "GC_G:1939511430",
+                                                       "chatMessages": [
+                                                         {
+                                                             "playerId": "67879d8e",
+                                                             "name": "lee",
+                                                             "message": "hi",
+                                                             "time": 760455049,
+                                                             "notificationType": "None"
+                                                         }
+                                                       ],
+                                                       "foo": 364
+                                                   },
+                                                    {
+                                                        "id": "2345",
+                                                        "playerId": "a067ff",
+                                                        "hashedId": "bb0091",
+                                                        "countryCode": "hk",
+                                                        "nickname": "DannyBoy",
+                                                        "nicknameLower": "dannyboy",
+                                                        "score": 0,
+                                                        "secondaryScore": 18,
+                                                        "indexScore": 0.18,
+                                                        "level": 1,
+                                                        "lastSaveUnixTime": 1446591499,
+                                                        "lastLoadUnixTime": 1446590552,
+                                                        "disconnectedUnixTime": 1446591499,
+                                                        "facebookId": "FB_1010006092353214",
+                                                        "gameCenterId": "GC_G:1939511430",
+                                                        "chatMessages": [
+                                                          {
+                                                              "playerId": "67879d8e",
+                                                              "name": "lee",
+                                                              "message": "hi",
+                                                              "time": 760455049,
+                                                              "notificationType": "None"
+                                                          }
+                                                        ],
+                                                        "foo": 111
+                                                    },
+                                                    {
+                                                        "id": "7788",
+                                                        "playerId": "a067ff",
+                                                        "hashedId": "bb0091",
+                                                        "countryCode": "hk",
+                                                        "nickname": "DannyBoy",
+                                                        "nicknameLower": "dannyboy",
+                                                        "score": 0,
+                                                        "secondaryScore": 18,
+                                                        "indexScore": 0.18,
+                                                        "level": 1,
+                                                        "lastSaveUnixTime": 1446591499,
+                                                        "lastLoadUnixTime": 1446590552,
+                                                        "disconnectedUnixTime": 1446591499,
+                                                        "facebookId": "FB_1010006092353214",
+                                                        "gameCenterId": "GC_G:1939511430",
+                                                        "chatMessages": [
+                                                          {
+                                                              "playerId": "67879d8e",
+                                                              "name": "lee",
+                                                              "message": "hi",
+                                                              "time": 760455049,
+                                                              "notificationType": "None"
+                                                          }
+                                                        ],
+                                                        "foo": 222
+                                                    },
+                                                    {
+                                                        "id": "9999",
+                                                        "playerId": "a067ff",
+                                                        "hashedId": "bb0091",
+                                                        "countryCode": "hk",
+                                                        "nickname": "DannyBoy",
+                                                        "nicknameLower": "dannyboy",
+                                                        "score": 0,
+                                                        "secondaryScore": 18,
+                                                        "indexScore": 0.18,
+                                                        "level": 1,
+                                                        "lastSaveUnixTime": 1446591499,
+                                                        "lastLoadUnixTime": 1446590552,
+                                                        "disconnectedUnixTime": 1446591499,
+                                                        "facebookId": "FB_1010006092353214",
+                                                        "gameCenterId": "GC_G:1939511430",
+                                                        "chatMessages": [
+                                                          {
+                                                              "playerId": "67879d8e",
+                                                              "name": "lee",
+                                                              "message": "hi",
+                                                              "time": 760455049,
+                                                              "notificationType": "None"
+                                                          }
+                                                        ],
+                                                        "foo": 999
+                                                    }
+        ];        
+
+        function showMoncalEditor(jsoncoldata) {
+            $("#container").empty();
+            var data = JSON.stringify(jsondocumentid_doc[jsoncoldata], ',', '\t');
+            require.config({ paths: { 'vs': 'scripts/monaco-editor/min/vs' } });
+            require(['vs/editor/editor.main'], function () {
+                var editor = monaco.editor.create(document.getElementById('container'), {
+                    value: [
+                       data
+                    ].join('\n'),
+                    language: 'javascript'
+                });
+            });
+        }
+
+        function getJsonIndex(list, id) {
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].id == id)
+                    return i;
+            }
+        }
+
+        $(document).ready(function () {
+            showMoncalEditor(0); // show default monaco editor
+            $("#minislide").click(function (e) {
+                e.preventDefault();
+                $("#mainslide").toggle();
+                $("#minislide").hide();
+            });
+
+            $("#btnmainslide").click(function (e) {
+                e.preventDefault();
+                $("#minislide").toggle();
+                $("#mainslide").hide();
+            });
+
+            $(".tt").click(function () {
+                ShowDocumentsContent();
+            });
+
+            function ShowDocumentsContent() {
+                $("#atabName").text("Documents");
+                $("#tabdocuments").show();
+                $("#tabdatabase").hide();
+            }
+
+            $("#tbldata").on("click", "td", function () {
+                var selectedcolid = $(this).text();
+                //alert(selectedcolid);
+                var jsoncoldata = getJsonIndex(jsondocumentid_doc, selectedcolid);
+                //alert(jsoncoldata)
+                showMoncalEditor(jsoncoldata);
+            });
+
+        });
+
+        $(document).ready(function () {
+
+            showDocuments("col1");
+            var data = [
+                   {
+                       name: 'Database1',
+                       id: "db1",
+                       children: [
+                           {
+                               name: 'Collections',
+                               id: "col1"
+                           }
+                       ]
+                   },
+                     {
+                         name: 'Database2',
+                         id: "db2",
+                         children: [
+                             {
+                                 name: 'Collections',
+                                 id: "col2"
+                             }
+                         ]
+                     }
+            ];
+
+            $('#tree1').tree({
+                data: data
+            });
+
+            // bind 'tree.click' event
+            $('#tree1').bind(
+                'tree.click',
+                function (event) {
+                    // The clicked node is 'event.node'
+                    var node = event.node;
+                    showDocuments(node.id);
+                    // alert(node.id);
+                }
+            );
+
+
+            function showDocuments(docid) {
+                //get json document id's from api
+
+                var jsondoc = {};
+                if (docid == "col1" || docid == "db1")
+                    jsondoc = jsondocumentid_doc;
+                if (docid == "col2" || docid == "db2")
+                    jsondoc = jsondocumentid_doc2;
+
+                //test data
+                $("#tbldata").empty();
+                var tr = [];
+                tr.push('<thead>');
+                tr.push('<tr>'); tr.push('<th>Id</th>'); tr.push('</tr>');
+                tr.push('</thead>');
+
+                tr.push('<tbody  id="tbodycontent">');
+                for (var i = 0; i < jsondoc.length; i++) {
+                    tr.push('<tr>');
+                    tr.push('<td>' + jsondoc[i].id + '</td>');
+                    tr.push('</tr>');
+                }
+                tr.push('</tbody>');
+                $("#tbldata").append($(tr.join('')));
+            }
+        });
+
+
+    </script>
+</head>
+<body>
+    <div>
+        <!-- Main header Content -->
+        <div class="header HeaderBg">
+            <div class="items">
+                <img class="DocDBicon" src="includes/DocDB-Logo.svg" />
+                <span class="title">Azure Local DocumentDB</span>
+                <div>
+                    <a>Quickstart</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>Explorer</a>
+                    <a class="createdocdbacnt">CREATE A DOCUMENTDB ACCOUNT></a>
+                </div>
+            </div>
+        </div>
+        <!-- Second menu Content -->
+        <div class="belowbg">
+            <span class="iconpad"><img src="includes/magnifying-glass.svg" style="width:0.7%" /> ADD COLLECTION</span>
+            <span class="iconpad"><img src="includes/magnifying-glass.svg" style="width:0.7%" />CREATE NEW QUERY</span>
+            <span class="iconpad"><img src="includes/magnifying-glass.svg" style="width:0.7%" />OPEN QUERIES</span>
+        </div>
+    </div>
+    <div class="row">
+        <div id="minislide" class="col-md-1 tt">
+            <div class="main-nav">
+                <ul class="nav">
+                    <li><a href="#" class="tt">Database</a></li>
+                    <li><a href="#" class="tt">Collection</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mainslide" class="col-md-2" style="height:500px;width:270px; display:none;">
+            <div id="sidebar-wrapper">
+                <div class="verticalLine">
+                    <span id="btnmainslide" style="background-color:aliceblue;padding-right:10px;" class="pull-right"><</span>
+                    <div id="tree1"></div>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="col-md-9" style="height:500px;">
+            <ul class="nav nav-tabs level">
+                <li class="active" style="float:left;"><a data-toggle="tab" id="atabName">Documents</a></li>
+            </ul><br />
+            <span class="spanmenu"><img src="includes/magnifying-glass.svg" style="width:1%" />Refresh</span>
+            <span class="spanmenu"><img src="includes/magnifying-glass.svg" style="width:1%" />Add document</span>
+            <span class="spanmenu"><img src="includes/magnifying-glass.svg" style="width:1%" />Create document</span>
+            <span class="spanmenu"><img src="includes/magnifying-glass.svg" style="width:1%" />Detete</span>
+            <span class="spanmenu"><img src="includes/magnifying-glass.svg" style="width:1%" />Discard</span>
+            <span class="spanmenu"><img src="includes/magnifying-glass.svg" style="width:1%" />Filter Documents</span>
+            <hr class="hrline">
+            <div class="tab-content" id="tabdocuments">
+                <div class="row">
+                    <div class="col-md-2">
+                        <table id="tbldata" class="table table-hover"></table>
+                    </div>
+                    <div class="col-md-8" id="divcontent">
+                        <div id="container" style="height:1000px;border-left:1px solid #d6d7d8"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="tabdatabase" style="display:none;">
+                <br /><br />
+                <p> User defined </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

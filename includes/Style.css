@@ -1,0 +1,310 @@
+﻿html body {
+    font-family: segoe UI;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.HeaderBg {
+    background-color: #1a1a1a;
+    height: 95px;
+}
+
+.title {
+    color: #00abec;
+    font-size: 20px;
+    font-family: segoe UI;
+    padding-left: 10px;
+}
+
+#createacnt {
+    padding-left: 1500px;
+}
+
+.belowbg {
+    background-color: #f2f2f2;
+    height: 30px;
+}
+
+.iconpad {
+    font-size: 11px;
+    padding: 8px 20px;
+}
+
+.createdocdbacnt {
+    color: yellowgreen;
+    position: absolute;
+    right: 10px;
+}
+
+#sidebar {
+    position: absolute;
+    top: 125px;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    background: lightgray;
+}
+
+.level3 {
+    padding-left: 0px;
+    font-size: 18px;
+    padding-top: 25px;
+}
+
+.level {
+    padding-left: 20px;
+    padding-top: 25px;
+}
+
+.nav > li > a {
+    color: black;
+    font-weight: 400;
+}
+
+.items {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.headline h4, .headline p {
+    display: inline-block;
+}
+
+.step1 {
+    padding-left: 20px;
+    padding-top: 25px;
+}
+
+.para1 {
+    font-weight: 400;
+}
+
+.butn1 {
+    font-weight: 400;
+}
+
+.para2 {
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 23px;
+}
+
+.atags {
+    color: #00abec;
+    font-weight: 400;
+}
+
+.headl2 {
+    font-weight: 400;
+}
+
+.DocDBicon {
+    padding-bottom: 10px;
+    /* padding-top:20px; */
+}
+
+.DocDBicon1 {
+    width: 9%;
+    float: left;
+    padding: 4px;
+}
+
+
+.parap {
+    padding-left: 10px;
+}
+
+.padleft {
+    padding-left: 20px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.tabcontent {
+    display: none;
+}
+
+.spanmenu {
+    padding-left: 20px;
+}
+/* other*/
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: white;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+.page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled .page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+/* Sidebar Styles */
+.verticalLine ul:after {
+    content: '';
+    width: 0;
+    height: 839px;
+    position: absolute;
+    border: 1px solid #d6d7d8;
+    top: 0;
+    left: 249px;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
+
+        .sidebar-nav li a {
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+
+            .sidebar-nav li a:active,
+            .sidebar-nav li a:focus {
+                text-decoration: none;
+            }
+
+    .sidebar-nav > .sidebar-brand {
+        height: 65px;
+        font-size: 18px;
+        line-height: 60px;
+    }
+
+        .sidebar-nav > .sidebar-brand a {
+            color: black;
+        }
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+        #wrapper.toggled {
+            padding-left: 0;
+        }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    .page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled .page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+ul li ul {
+    display: none;
+}
+
+.ptagfont {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    padding-top: 2px;
+}
+
+.padtopul {
+    padding-top: 40px;
+}
+
+.padbotli {
+    padding-bottom: 10px;
+}
+
+/* sideminibar css*/
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+}
+
+
+.main-nav {
+    width: 100vh;
+    height: 45px;
+    position: absolute;
+    background: whitesmoke;
+    -webkit-transform-origin: left top;
+    -webkit-transform: rotate(-90deg) translateX(-100%);
+}
+
+ul.nav {
+    margin: 0 auto;
+}
+
+    ul.nav li {
+        margin-right: 20px;
+        float: right;
+        line-height: 25px;
+        height: auto;
+    }
+
+#minislide {
+    background-color: whitesmoke;
+    width: 50px;
+    height: 1000px;
+}
