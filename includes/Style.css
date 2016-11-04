@@ -1,5 +1,5 @@
-﻿html body {
-    font-family: segoe UI;
+﻿html {
+    font-family: 'Segoe UI' !important;
     padding: 0px;
     margin: 0px;
     overflow: hidden;
@@ -7,14 +7,31 @@
 
 .HeaderBg {
     background-color: #1a1a1a;
-    height: 95px;
+    height: 90px;
 }
 
 .title {
     color: #00abec;
     font-size: 20px;
-    font-family: segoe UI;
     padding-left: 10px;
+}
+
+.DocDBicon {
+    padding-bottom: 10px;
+    /* padding-top:20px; */
+}
+
+.menuQuickStart {
+    font-size: 14px;
+}
+
+.menuExplorer {
+    padding-left: 28px;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 #createacnt {
@@ -23,18 +40,35 @@
 
 .belowbg {
     background-color: #f2f2f2;
-    height: 30px;
+    height: 42px;
+}
+
+.adjustheight {
+    height: 6px;
 }
 
 .iconpad {
-    font-size: 11px;
-    padding: 8px 20px;
+    font-size: 12px;
+    padding: 8px 24px;
+    font-weight: 600;
+}
+
+#btnmainslide {
+    padding-top: 16px;
+    padding-right: 16px;
+    width: 12%;
+}
+
+.submenuicons {
+    width: 1.1%;
+    margin-right: 6px;
 }
 
 .createdocdbacnt {
-    color: yellowgreen;
+    color: #a5ce00;
     position: absolute;
-    right: 10px;
+    right: 25px;
+    font-size: 18px;
 }
 
 #sidebar {
@@ -63,8 +97,8 @@
 }
 
 .items {
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-left: 24px;
+    padding-top: 15px;
 }
 
 .headline h4, .headline p {
@@ -103,18 +137,6 @@ ul {
     font-weight: 400;
 }
 
-.DocDBicon {
-    padding-bottom: 10px;
-    /* padding-top:20px; */
-}
-
-.DocDBicon1 {
-    width: 9%;
-    float: left;
-    padding: 4px;
-}
-
-
 .parap {
     padding-left: 10px;
 }
@@ -131,9 +153,17 @@ a {
     display: none;
 }
 
-.spanmenu {
-    padding-left: 20px;
+#imgiconwidth {
+    width: 1.7% !important;
+    margin-right: 8px;
 }
+
+.spanmenu {
+    padding-right: 24px;
+    font-size: 16px;
+}
+
+
 /* other*/
 #wrapper {
     padding-left: 0;
@@ -176,15 +206,19 @@ a {
     position: absolute;
     margin-right: -250px;
 }
+
+.arrowbt {
+    width: 1px;
+}
 /* Sidebar Styles */
 .verticalLine ul:after {
     content: '';
     width: 0;
-    height: 839px;
+    height: 780px;
     position: absolute;
     border: 1px solid #d6d7d8;
     top: 0;
-    left: 249px;
+    left: 270px;
 }
 
 .sidebar-nav {
@@ -232,7 +266,7 @@ a {
         }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 277px;
     }
 
     #wrapper.toggled #sidebar-wrapper {
@@ -255,7 +289,6 @@ ul li ul {
 }
 
 .ptagfont {
-    font-family: 'Segoe UI';
     font-size: 14px;
     padding-top: 2px;
 }
@@ -282,7 +315,6 @@ ul {
     margin: 0;
 }
 
-
 .main-nav {
     width: 100vh;
     height: 45px;
@@ -294,6 +326,7 @@ ul {
 
 ul.nav {
     margin: 0 auto;
+    margin-top: 0px;
 }
 
     ul.nav li {
@@ -307,4 +340,125 @@ ul.nav {
     background-color: whitesmoke;
     width: 50px;
     height: 1000px;
+}
+
+
+/*bootstrap tree*/
+.well {
+    padding: 19px 0px;
+    padding-top: 40px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.tree li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 5px 0 5px;
+    /*position: relative;*/
+}
+
+    .tree li::before, .tree li::after {
+        content: '';
+        left: -20px;
+        position: absolute;
+        right: auto;
+    }
+
+    .tree li::before {
+        border-left: 1px solid #999;
+        bottom: 50px;
+        height: 100%;
+        top: 0;
+        width: 1px;
+    }
+
+    .tree li::after {
+        border-top: 1px solid #999;
+        height: 20px;
+        top: 25px;
+        width: 25px;
+    }
+
+    .tree li span {
+        /*-moz-border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    border: 1px solid #999;
+                    border-radius: 5px;*/
+        display: block;
+        /*padding: 3px 8px;*/
+        text-decoration: none;
+        padding: 2 19px;
+    }
+
+    .tree li.parent_li > span {
+        cursor: pointer;
+    }
+
+.tree > ul > li::before, .tree > ul > li::after {
+    border: 0;
+}
+
+.tree li:last-child::before {
+    height: 30px;
+}
+
+.tree li.parent_li > span:hover , .tree li.parent_li > ul:hover {
+   background-color: lightskyblue;
+   font-weight:500;
+   color: #000;
+   cursor:pointer;
+}
+
+.imgarrowstyle {
+    height: 10px;
+    width: 10px;
+    margin-right: 10px;
+    margin-left: 24px;
+}
+
+.imgdocdb {
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+}
+
+.imgdoccol {
+    height: 18px;
+    width: 18px;
+    margin-right: 5px;
+    margin-left: 24px;
+}
+
+#spandbstyle {
+    font-size: 18px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#spancolstyle {
+    font-size: 16px;
+    display: inline;
+    vertical-align: middle;
+}
+
+
+
+.test  {
+    background-color: lightskyblue;
+    font-weight:500;
+}
+
+.rightarrowimg{
+    padding-left:20px; 
+    padding-bottom: 3px;
+}
+
+
+@media (min-width: 992px) {
+    .col-md-9 {
+        padding-left: 30px;
+        padding-top: 24px !important;
+    }
 }
