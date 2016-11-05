@@ -13,7 +13,7 @@
     <script>
         var jsondocumentid_doc1 = [
                                                    {
-                                                       "id": "1234",
+                                                       "id": "16ac2a2e-0d4a-4aa9-816f-1169b4453572",
                                                        "playerId": "a067ff",
                                                        "hashedId": "bb0091",
                                                        "countryCode": "hk",
@@ -40,7 +40,7 @@
                                                        "foo": 364
                                                    },
                                                     {
-                                                        "id": "2345",
+                                                        "id": "hjtyo67ty-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -67,7 +67,7 @@
                                                         "foo": 111
                                                     },
                                                     {
-                                                        "id": "7788",
+                                                        "id": "14ac2a02e-0d4a-4aa9-816f-1169b4453571",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -94,7 +94,7 @@
                                                         "foo": 222
                                                     },
                                                     {
-                                                        "id": "9999",
+                                                        "id": "hjtyui87-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -121,7 +121,7 @@
                                                         "foo": 999
                                                     },
                                                     {
-                                                        "id": "9889",
+                                                        "id": "09876543-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -148,7 +148,7 @@
                                                         "foo": 939
                                                     },
                                                     {
-                                                        "id": "5599",
+                                                        "id": "56789007-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -175,7 +175,7 @@
                                                         "foo": 128
                                                     },
                                                     {
-                                                        "id": "2345",
+                                                        "id": "45896745-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -202,7 +202,7 @@
                                                         "foo": 111
                                                     },
                                                     {
-                                                        "id": "7788",
+                                                        "id": "ghghghgh-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -229,7 +229,7 @@
                                                         "foo": 222
                                                     },
                                                     {
-                                                        "id": "9999",
+                                                        "id": "09ghdfrt-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -256,7 +256,7 @@
                                                         "foo": 999
                                                     },
                                                     {
-                                                        "id": "9999",
+                                                        "id": "12df45gh-0d4a-4aa9-816f-1169b4453572",
                                                         "playerId": "a067ff",
                                                         "hashedId": "bb0091",
                                                         "countryCode": "hk",
@@ -426,12 +426,14 @@
                 e.preventDefault();
                 $("#mainslide").show();
                 $("#minislide").hide();
+                $("#content").css('padding-left', '140px');
             });
 
             $("#btnmainslide").click(function (e) {
                 e.preventDefault();
                 $("#minislide").show();
                 $("#mainslide").hide();
+                $("#content").css('padding-left', '30px');              
             });
 
             $(".tt").click(function () {
@@ -455,6 +457,18 @@
             $(".spanchild").click(function () {
                 var selectedcol = $(this).attr('id');
                 showDocuments(selectedcol);
+            });
+
+            $(".iconpad").click(function () {               
+                $("div .iconpad").removeClass('iconpadclick');
+                $(this).addClass('iconpadclick');
+                $("div .spanmenu").removeClass('spanmenuclick');
+            });
+
+            $(".spanmenu").click(function () {
+                $("div .spanmenu").removeClass('spanmenuclick');
+                $(this).addClass('spanmenuclick');
+                $("div .iconpad").removeClass('iconpadclick');
             });
         });
 
@@ -522,6 +536,7 @@
         function formTreeMenuFromJsonFile() {
             $("#divTreeMenu").empty();
             var ul = [];
+            ul.push('<ul>');
             for (var i = 0; i < jsontreedata.length; i++) {
                 var parentdata = jsontreedata[i];
                 ul.push('<li id="litree">');
@@ -538,9 +553,10 @@
                 }
                 ul.push('</li>');
             }
+            ul.push('</ul>');
             $("#divTreeMenu").append($(ul.join('')));
         }
-        
+
         function treeStyles() {
             //  $('.tree li ul').children().hide();
             $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
@@ -548,6 +564,7 @@
                 showDocuments($(this).text());
                 setTreeMenuArrowRotation($(this).find("img").attr('id'), $(this).find("img").attr('src'));
                 var children = $(this).parent('li.parent_li').find(' > ul > li');
+                // alert(children.is(":visible"));
                 if (children.is(":visible")) {
                     children.hide('fast');
                     $(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
@@ -567,7 +584,7 @@
 
     </script>
 </head>
-<body style="font-family:'Segoe UI';font-size:large;">
+<body>
     <div>
         <!-- Main header Content -->
         <div class="header HeaderBg">
@@ -577,16 +594,16 @@
                 <div>
                     <a><span class="menuQuickStart">Quickstart</span></a>
                     <a><span class="menuExplorer">Explorer</span></a>
-                    <a class="createdocdbacnt">CREATE A DOCUMENTDB ACCOUNT<img class="rightarrowimg" src="includes/Arrow.svg"/></a>
+                    <a class="createdocdbacnt">CREATE A DOCUMENTDB ACCOUNT<img class="rightarrowimg" src="includes/Arrow.svg" /></a>
                 </div>
             </div>
         </div>
         <!-- Second menu Content -->
         <div class="belowbg">
             <div class="adjustheight"></div>
-            <span class="iconpad"><img class="submenuicons" src="includes/upload doc.svg" />ADD COLLECTION</span>
-            <span class="iconpad"><img class="submenuicons" src="includes/Create Query.svg" />CREATE NEW QUERY</span>
-            <span class="iconpad"><img class="submenuicons" src="includes/Open query.svg" />OPEN QUERIES</span>
+            <div class="iconpad" id="1"><img class="submenuicons" src="includes/upload doc.svg" />ADD COLLECTION</div>
+            <div class="iconpad" id="2"><img class="submenuicons"  src="includes/Create Query.svg" />CREATE NEW QUERY</div>
+            <div class="iconpad" id="3"><img class="submenuicons"  src="includes/Open query.svg" />OPEN QUERIES</div>
         </div>
     </div>
     <div class="row">
@@ -597,37 +614,37 @@
                     <li><a href="#" class="tt">Collection</a></li>
                 </ul>
             </div>
-        </div>
-        <div id="mainslide" class="col-md-2">
+        </div>       
+        <div id="mainslide" class="col-md-1">
             <div id="sidebar-wrapper">
-                <div class="verticalLine">
-                    <span><img id="btnmainslide" class="pull-right" src="includes/back.svg" /></span>
-                    <!--<div id="tree1"></div>-->
-                    <div id="divTreeMenu" class="tree well"></div>
-                </div>
+                <div class="pull-right divimgleftarrow"><img id="btnmainslide" src="includes/imgarrowlefticon.svg"  /></div>
+                <div id="divTreeMenu" class="tree well"></div>
+                <div class="verticalLine"></div>
             </div>
         </div>
         <div id="content" class="col-md-9">
             <div class="contentdiv">
                 <ul class="nav nav-tabs level">
                     <li class="active" style="float:left;"><a data-toggle="tab" id="atabName">Documents</a></li>
-                </ul><br />
-                <span class="spanmenu"><img id="imgiconwidth" src="includes/refresh.svg" />Refresh</span>
-                <span class="spanmenu"><img id="imgiconwidth" src="includes/upload doc.svg" />Add document</span>
-                <span class="spanmenu"><img id="imgiconwidth" src="includes/create doc.svg" />Create document</span>
-                <span class="spanmenu"><img id="imgiconwidth" src="includes/save.svg" />Save</span>
-                <span class="spanmenu"><img id="imgiconwidth" src="includes/discard.svg" />Discard</span>
-                <span class="spanmenu"><img id="imgiconwidth" src="includes/delete.svg" />Delete</span>
-                <span class="spanmenu"><img id="imgiconwidth" src="includes/filter.svg" />Filter</span>
+                </ul>
+                <div class="divspanmenu">
+                    <div class="spanmenu"><img id="imgiconwidth" src="includes/refresh.svg" />Refresh</div>
+                    <div class="spanmenu"><img id="imgiconwidth" src="includes/upload doc.svg" />Add document</div>
+                    <div class="spanmenu"><img id="imgiconwidth" src="includes/create doc.svg" />Create document</div>
+                    <div class="spanmenu"><img id="imgiconwidth" src="includes/save.svg" />Save</div>
+                    <div class="spanmenu"><img id="imgiconwidth" src="includes/discard.svg" />Discard</div>
+                    <div class="spanmenu"><img id="imgiconwidth" src="includes/delete.svg" />Delete</div>
+                    <div class="spanmenu"><img id="imgiconwidth" src="includes/filter.svg" />Filter</div>
+                </div>
                 <hr class="hrline">
             </div>
             <div class="tab-content" id="tabdocuments">
                 <div class="row">
-                    <div class="col-md-2" style="overflow-y:auto;height:610px;border:none;">
+                    <div class="col-md-3 class3">
                         <table id="tbldata" class="table table-hover"></table>
                     </div>
-                    <div class="col-md-10" id="divcontent" style="height:610px;border:none;">
-                        <div id="container" style="height:600px;border-left :1px solid #d6d7d8;"></div>
+                    <div class="col-md-9 class9" id="divcontent">
+                        <div id="container"></div>
                     </div>
                 </div>
             </div>

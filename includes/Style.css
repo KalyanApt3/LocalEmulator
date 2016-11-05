@@ -5,6 +5,11 @@
     overflow: hidden;
 }
 
+body{
+   font-family:'Segoe UI';
+   font-size:large;
+}
+
 .HeaderBg {
     background-color: #1a1a1a;
     height: 90px;
@@ -49,14 +54,51 @@ a:hover {
 
 .iconpad {
     font-size: 12px;
-    padding: 8px 24px;
+    margin: 8px 24px;
     font-weight: 600;
+    display: inline;
+}
+
+    .iconpad:hover {
+        background-color: #e6e6e6;
+        cursor: pointer;
+        /*border: 1px solid #1ebbee;*/
+        padding: 5px;
+    }
+
+.iconpadclick {
+    background-color: #e6e6e6;
+    cursor: pointer;
+    border: 1px solid #1ebbee;
+    padding: 5px;
 }
 
 #btnmainslide {
-    padding-top: 16px;
-    padding-right: 16px;
-    width: 12%;
+    height:25px;
+}
+
+.tab-content{
+    padding-left:20px;
+    padding-top:20px;
+}
+
+.class3{
+    overflow-y:auto;
+    height:610px;
+}
+
+.class9{
+    height:610px;
+}
+
+.divspanmenu{
+    padding-left:20px;
+    padding-top:20px;
+}
+
+#container{
+    height:600px;
+    border-left :1px solid #d6d7d8;
 }
 
 .submenuicons {
@@ -125,7 +167,7 @@ a:hover {
 
 ul {
     list-style-type: none;
-    padding-left: 23px;
+    padding-left: 0px;
 }
 
 .atags {
@@ -154,15 +196,29 @@ a {
 }
 
 #imgiconwidth {
-    width: 1.7% !important;
-    margin-right: 8px;
+    width: 20px;
+    margin-right: 10px;
 }
 
 .spanmenu {
-    padding-right: 24px;
+    margin-right: 24px;
     font-size: 16px;
+    display: inline;
 }
 
+    .spanmenu:hover {
+        background-color: #e6e6e6;
+        cursor: pointer;
+        /*border: 1px solid #1ebbee;*/
+        padding: 5px;
+    }
+
+.spanmenuclick {
+    background-color: #e6e6e6;
+    cursor: pointer;
+    border: 1px solid #1ebbee;
+    padding: 5px;
+}
 
 /* other*/
 #wrapper {
@@ -211,14 +267,14 @@ a {
     width: 1px;
 }
 /* Sidebar Styles */
-.verticalLine ul:after {
+.verticalLine {
     content: '';
     width: 0;
     height: 780px;
     position: absolute;
     border: 1px solid #d6d7d8;
     top: 0;
-    left: 270px;
+    left: 276px;
 }
 
 .sidebar-nav {
@@ -284,9 +340,9 @@ a {
     }
 }
 
-ul li ul {
+/*ul li ul {
     display: none;
-}
+}*/
 
 .ptagfont {
     font-size: 14px;
@@ -355,8 +411,8 @@ ul.nav {
 .tree li {
     list-style-type: none;
     margin: 0;
-    padding: 10px 5px 0 5px;
-    /*position: relative;*/
+    padding: 10px 0px 0 0px;
+    position: relative;
 }
 
     .tree li::before, .tree li::after {
@@ -367,7 +423,7 @@ ul.nav {
     }
 
     .tree li::before {
-        border-left: 1px solid #999;
+        /*border-left: 1px solid #999;*/
         bottom: 50px;
         height: 100%;
         top: 0;
@@ -375,7 +431,7 @@ ul.nav {
     }
 
     .tree li::after {
-        border-top: 1px solid #999;
+        /*border-top: 1px solid #999;*/
         height: 20px;
         top: 25px;
         width: 25px;
@@ -389,7 +445,7 @@ ul.nav {
         display: block;
         /*padding: 3px 8px;*/
         text-decoration: none;
-        padding: 2 19px;
+        padding: 2px 19px;
     }
 
     .tree li.parent_li > span {
@@ -404,18 +460,30 @@ ul.nav {
     height: 30px;
 }
 
-.tree li.parent_li > span:hover , .tree li.parent_li > ul:hover {
-   background-color: lightskyblue;
-   font-weight:500;
-   color: #000;
-   cursor:pointer;
+.tree li.parent_li > span:hover {
+    background-color: #e6f9ff;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    /*height:40px;*/
+}
+
+.tree li#lisubtree > span:hover {
+    background-color: #e6f9ff;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    /*height:40px;*/
+}
+
+#tbldata tr:hover {
+    background-color: #e6f9ff;
 }
 
 .imgarrowstyle {
     height: 10px;
     width: 10px;
     margin-right: 10px;
-    margin-left: 24px;
 }
 
 .imgdocdb {
@@ -428,7 +496,7 @@ ul.nav {
     height: 18px;
     width: 18px;
     margin-right: 5px;
-    margin-left: 24px;
+    margin-left: 36px;
 }
 
 #spandbstyle {
@@ -445,20 +513,35 @@ ul.nav {
 
 
 
-.test  {
+.test {
     background-color: lightskyblue;
-    font-weight:500;
+    font-weight: 500;
 }
 
-.rightarrowimg{
-    padding-left:20px; 
+.rightarrowimg {
+    padding-left: 20px;
     padding-bottom: 3px;
 }
 
+#tbldata {
+    font-size: 14px;
+}
+
+.divimgleftarrow {
+    display: inline-block;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+    .divimgleftarrow:hover {
+        background-color: #e6e6e6;
+        cursor: pointer;
+        border: 1px solid #1ebbee;
+    }
 
 @media (min-width: 992px) {
-    .col-md-9 {
-        padding-left: 30px;
+    #content {
+        padding-left: 140px;
         padding-top: 24px !important;
     }
 }
